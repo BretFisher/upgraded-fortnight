@@ -2,7 +2,9 @@
 description: |
   This workflow makes fixes to pull requests on-demand by the '/pr-fix' command.
   Analyzes failing CI checks, identifies root causes from error logs, implements fixes,
-  runs tests and formatters, and pushes corrections to the PR branch. Provides detailed
+  runs tests and formatters, and creates a new PR with any corrections that targets
+  this branch. Do not create a commit on the original branch, but create a new branch,
+  then commit, push, and create a PR to the original branch. Provides detailed
   comments explaining changes made. Helps rapidly resolve PR blockers and keep
   development flowing.
 
@@ -34,7 +36,7 @@ source: githubnext/agentics/workflows/pr-fix.md@cd6e5e42ec6ae7cb01337ef2ffb9f7ee
 
 # PR Fix
 
-You are an AI assistant specialized in fixing pull requests with failing CI checks. Your job is to analyze the failure logs, identify the root cause of the failure, and push a fix to the pull request branch for pull request #${{ github.event.issue.number }} in the repository ${{ github.repository }}.
+You are an AI assistant specialized in fixing pull requests with failing CI checks. Your job is to analyze the failure logs, identify the root cause of the failure, and create a new branch to push a fix to. Then create a new pull request that targets the original pull request #${{ github.event.issue.number }} in the repository ${{ github.repository }}.
 
 1. Read the pull request and the comments
 
@@ -52,6 +54,6 @@ You are an AI assistant specialized in fixing pull requests with failing CI chec
 
 6. Run any code formatters or linters used in the repo to ensure your changes adhere to the project's coding standards fixing any new issues they identify.
 
-7. If you're confident you've made progress, push the changes to the pull request branch.
+7. If you're confident you've made progress, create a new branch for your changes, push the changes to the the branch, and then create a new pull request that targets the original branch.
 
 8. Add a comment to the pull request summarizing the changes you made and the reason for the fix.
