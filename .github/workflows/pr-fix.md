@@ -8,6 +8,8 @@ description: |
   comments explaining changes made. Helps rapidly resolve PR blockers and keep
   development flowing.
 
+engine: copilot
+
 on:
   slash_command:
     name: pr-fix
