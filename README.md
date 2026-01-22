@@ -4,6 +4,8 @@ A sample repo that you can copy with the template button. Then you can use the G
 
 The app is inspired by fortune cookies or the magic 8-ball in that it gives you back a random common code error message as your "fortune". It may or may not have abilities to predict your next error. Built with Go and Cobra, this project serves as a repo template for adding common GitHub Actions to, and demonstrates basic CLI application development.
 
+Bonus: We've Agentic Workflows to help automate PR failure fixes
+
 ## Project Description
 
 This application provides random error messages from software over the years. Run it to receive your error fortune!
